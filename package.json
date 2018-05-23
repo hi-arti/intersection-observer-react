@@ -1,7 +1,6 @@
 {
   "name": "intersection-observer-react",
-  "description":
-    "A simple wrapper around IntersectionObserver API to use it within react apps.",
+  "description": "A simple wrapper around IntersectionObserver API to use it within react apps.",
   "author": "Faris Abusada",
   "user": "Yamsafer",
   "version": "1.2.0",
@@ -15,13 +14,10 @@
     "gh-pages:deploy": "gh-pages -d gh-pages",
     "gh-pages:stats": "webpack --env ghPages --profile --json > stats.json",
     "dist": "webpack --env dist",
-    "dist:es6":
-      "rimraf ./dist-es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
+    "dist:es6": "rimraf ./dist-es6 && BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
     "dist:min": "webpack --env distMin",
-    "dist:modules":
-      "rimraf ./dist-modules && BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
-    "preversion":
-      "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am \"Update dist\"",
+    "dist:modules": "rimraf ./dist-modules && BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
+    "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am \"Update dist\"",
     "prepublish": "npm run dist:es6 && npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
@@ -30,7 +26,7 @@
   "module": "dist-es6",
   "jsnext:main": "dist-es6",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.0",
@@ -87,12 +83,24 @@
   },
   "jest": {
     "collectCoverage": true,
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "packages"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "packages"
+    ]
   },
-  "keywords": ["react", "reactjs", "boilerplate"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate"
+  ],
   "license": "MIT",
-  "pre-push": ["test"],
+  "pre-push": [
+    "test"
+  ],
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
     "prop-types": "^15.5.10"
