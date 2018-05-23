@@ -11,7 +11,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  threshold: [0.1]
+  threshold: [0.1],
+  as: "div"
 };
 
 class Observer extends Component {
@@ -83,8 +84,10 @@ class Observer extends Component {
       this.reset();
   }
   render() {
-    const { threshold, root, rootMargin, ...rest } = this.props;
-    return <div {...rest} />;
+    const { threshold, root, rootMargin, as, ...rest } = this.props;
+    const Component = as;
+
+    return <Component {...rest} />;
   }
 }
 
